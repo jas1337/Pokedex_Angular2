@@ -1,0 +1,48 @@
+<div *ngIf="pokemon">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th scope="row"><img class="pokemonPicture" src="{{pokemon.sprite}}"></th>
+            </tr>
+            <tr>
+                <td>
+                    <p>NAME: {{pokemon.name | uppercase}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>SPEED: {{pokemon.speed }}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>ATTACK: {{pokemon.attack }}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>DEFENSE: {{pokemon.defense }}</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div *ngIf="evolutionChain">
+    <p>EVOLUTION CHAIN:</p>
+<table class="table">
+    <tbody>
+        <tr ><div id="imgContainer">
+            <td> <a href="./pokemon-detail/{{evolutionChain.firstFormUrl}}" ><img src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/{{evolutionChain.firstFormUrl}}.png">
+            <p>{{evolutionChain.firstForm | uppercase}}</p></a></td>
+            <td><a href="./pokemon-detail/{{evolutionChain.secondFormUrl}}" ><img src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/{{evolutionChain.secondFormUrl}}.png">
+            <p>{{evolutionChain.secondForm | uppercase}}</p></a></td>
+            <td><a href="./pokemon-detail/{{evolutionChain.thirdFormUrl}}" ><img src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/{{evolutionChain.thirdFormUrl}}.png">
+            <p>{{evolutionChain.thirdForm | uppercase}}</p></a></td>
+            </div>
+        </tr>
+    </tbody>
+</table>
+</div>
+

@@ -1,0 +1,30 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Pokemon’s image</th>
+            <th>Name</th>
+            <th>HP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pokemon of pokemonList  ">
+            <th scope="row">{{pokemon.id}}</th>
+            <td> <a [routerLink]="['/pokemon-detail', pokemon.id]"><img class="pokemonPicture" src="{{pokemon.sprite}}"></a></td>
+            <td>{{pokemon.name | uppercase}}</td>
+            <td>{{pokemon.hp}}</td>
+        </tr>
+    </tbody>
+</table>
+<nav aria-label="Page navigation example" style=" padding-left:20%;">
+    <ul class="pagination pagination-lg">
+        <li class="page-item"><button class="btn btn-secondary btn-lg" (click)="paginationPreviousPage()" [disabled]="isLoading">Previous</button></li>
+        <li class="page-item">
+            <p class="btn btn-secondary btn-lg disabled" style="cursor: default">{{page}}</p>
+        </li>
+        <li class="page-item"><button class="btn btn-secondary btn-lg" (click)="paginationNextPage()" [disabled]="isLoading">Next</button></li>
+        <li class="page-item" style="margin:15px;"><label>Pokemon’s to display:</label></li>
+        <li class="page-item"><input class="page-link" style="width:100px;" type="number" [(ngModel)]="limit" min="1" max="20"></li>
+    </ul>
+</nav>
+
