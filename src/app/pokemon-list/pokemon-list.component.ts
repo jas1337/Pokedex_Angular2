@@ -1,17 +1,18 @@
 import { Component, OnInit, Input, Output, } from '@angular/core';
 import { Pokemon } from '../model/pokemon';
 import { PokemonService } from '../shared/pokemon.service';
-import {SortbyIdPipe} from '../shared/sort-pipe'
+
 
 @Component({
   selector: 'pokemon-list-app',
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.css'],
+ 
 })
 export class PokemonListComponent implements OnInit {
 
   pokemonList: Pokemon[] = [];
-  pokemon: Pokemon;
+  pokemon: Pokemon ;
   count: number = 721;
   offset: number = 1;
   limit: number = 5;
@@ -20,13 +21,22 @@ export class PokemonListComponent implements OnInit {
   isLoading: boolean = false;
 
   constructor(
-    // private router: Router,
+
     private pokemonService: PokemonService) { }
 
   ngOnInit() {
 
     this.getPokemons();
-    
+
+// return this.pokemonService.getPokemon4Testing2().subscribe(data => {
+//         this.pokemon = data;
+//       },
+//       (error:any) => console.log("Error: ", error),
+//       () => {
+      
+//       console.log(this.pokemon.data.id);
+//       });
+
   }
 
   paginationNextPage() {
@@ -40,7 +50,7 @@ export class PokemonListComponent implements OnInit {
         this.offset = this.offset + this.limit;
         this.getPokemons();
       }
-      console.log("nic sie ne dzieje");
+      
     }
   }
 
@@ -55,7 +65,7 @@ export class PokemonListComponent implements OnInit {
         this.offset = this.offset - this.limit;
         this.getPokemons();
       }
-      console.log("nic sie ne dzieje");
+      
     }
   }
 
@@ -72,14 +82,13 @@ export class PokemonListComponent implements OnInit {
       .subscribe(data => {
         this.pokemon = data;
       },
+      
       error => console.log("Error: ", error),
       () => {
         this.pokemonList.push(this.pokemon);
         if (this.pokemonList.length == this.limit) {
           this.isLoading = false;
         }
-      
-        // console.log(this.pokemon);
       
       });
   }

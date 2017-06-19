@@ -16,7 +16,9 @@ import { EvolutionChainUrl } from '../model/evolution-chain-url';
 export class PokemonDetailComponent implements OnInit {
 
     pokemon: Pokemon;
-    evolutionChain: EvolutionChain;
+    evolutionChain1: EvolutionChain;
+    evolutionChain2: EvolutionChain;
+    evolutionChain3: EvolutionChain;
     evolutionChainList: EvolutionChain[] = [];
     count: number = 365;
     evolutionChainUrl: EvolutionChainUrl;
@@ -36,20 +38,43 @@ export class PokemonDetailComponent implements OnInit {
             .switchMap((params: Params) => this.pokemonService.getEvolutionChainUrl(+params['id']))
             .subscribe(data => {
             this.evolutionChainUrl = data
-                this.getEvolutionChain(parseInt(this.evolutionChainUrl.url));
+                this.getEvolutionChain1(parseInt(this.evolutionChainUrl.url));
+                this.getEvolutionChain2(parseInt(this.evolutionChainUrl.url));
+                this.getEvolutionChain3(parseInt(this.evolutionChainUrl.url));
 
             });
 
     }
 
 
+    getEvolutionChain1(id: number) {
 
-
-    getEvolutionChain(id: number) {
-
-        this.pokemonService.getEvolutionChain(id)
+        this.pokemonService.getEvolutionChain1(id)
             .subscribe(data => {
-                this.evolutionChain = data;
+                this.evolutionChain1 = data;
+            },
+            error => console.log("Error: ", error),
+            () => {
+
+            });
+    }
+
+   getEvolutionChain2(id: number) {
+
+        this.pokemonService.getEvolutionChain2(id)
+            .subscribe(data => {
+                this.evolutionChain2 = data;
+            },
+            error => console.log("Error: ", error),
+            () => {
+
+            });
+    }
+       getEvolutionChain3(id: number) {
+
+        this.pokemonService.getEvolutionChain3(id)
+            .subscribe(data => {
+                this.evolutionChain3 = data;
             },
             error => console.log("Error: ", error),
             () => {

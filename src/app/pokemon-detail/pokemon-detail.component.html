@@ -29,17 +29,17 @@
 </div>
 
 
-<div *ngIf="evolutionChain">
+<div >
     <p>EVOLUTION CHAIN:</p>
 <table class="table">
     <tbody>
         <tr ><div id="imgContainer">
-            <td> <a href="./pokemon-detail/{{evolutionChain.firstFormUrl}}" ><img src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/{{evolutionChain.firstFormUrl}}.png">
-            <p>{{evolutionChain.firstForm | uppercase}}</p></a></td>
-            <td><a href="./pokemon-detail/{{evolutionChain.secondFormUrl}}" ><img src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/{{evolutionChain.secondFormUrl}}.png">
-            <p>{{evolutionChain.secondForm | uppercase}}</p></a></td>
-            <td><a href="./pokemon-detail/{{evolutionChain.thirdFormUrl}}" ><img src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/{{evolutionChain.thirdFormUrl}}.png">
-            <p>{{evolutionChain.thirdForm | uppercase}}</p></a></td>
+            <td *ngIf="evolutionChain1"> <a  href="./pokemon-detail/{{evolutionChain1.formUrl}}" ><img class="pokemonPicture" src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/{{evolutionChain1.formUrl}}.png">
+            <p>{{evolutionChain1.form | uppercase}}</p></a></td>
+            <td *ngIf="evolutionChain2"><a  href="./pokemon-detail/{{evolutionChain2.formUrl}}" ><img class="pokemonPicture" src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/{{evolutionChain2.formUrl}}.png">
+            <p>{{evolutionChain2.form | uppercase}}</p></a></td>
+            <td *ngIf="evolutionChain3"><a  href="./pokemon-detail/{{evolutionChain3.formUrl}}" ><img class="pokemonPicture" src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/{{evolutionChain3.formUrl}}.png">
+            <p>{{evolutionChain3.form | uppercase}}</p></a></td>
             </div>
         </tr>
     </tbody>
