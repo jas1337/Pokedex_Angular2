@@ -20,3 +20,8 @@ a. Pokemon’s speed, attack, defence stats,
 b. Reference to	it’s evolution	forms,
 
 5. Add at least	one unit/integration test.
+
+To run please disable AD Blocker
+
+npm install
+npm start
