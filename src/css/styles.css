@@ -1,0 +1,23 @@
+p {
+  font-size: 1.5em; }
+
+#imgContainer img {
+  width: 30%; }
+
+.pokemonPicture:hover {
+  border: 1px solid red;
+  transition: 0.9s;
+  transform: rotate(360deg); }
+
+.pokemonPicture {
+  border-radius: 50%;
+  display: inline-block;
+  width: 200px;
+  border: 1px solid gray;
+  overflow: hidden;
+  text-align: center; }
+
+.table {
+  font-size: 1.5em; }
+
+/*# sourceMappingURL=styles.css.map */

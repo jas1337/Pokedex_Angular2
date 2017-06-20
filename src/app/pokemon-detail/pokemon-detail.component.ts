@@ -11,7 +11,7 @@ import { EvolutionChainUrl } from '../model/evolution-chain-url';
 @Component({
     selector: 'pokemon-detail-app',
     templateUrl: './pokemon-detail.component.html',
-    styleUrls: ['./pokemon-detail.component.css'],
+    styleUrls: ['../../../css/styles.css'],
 })
 export class PokemonDetailComponent implements OnInit {
 
